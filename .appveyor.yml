@@ -10,7 +10,7 @@ cache: node_modules  # кеширование
 
 environment:
   my_variable:
-    secure: RR6KZNVl2p6L/7oypb28iTezBuM5JW8cH9qANDTLZJTzoGasw86ld6z1cEyiV5LG
+    secure: ykl9qLdykX7n3a/ojs0hkSDD+5sQLwm6teLibXfdc0sLuGZn8miOcAHUrb92k0t4
 
 install:
   - npm install  # команда установки зависимостей
