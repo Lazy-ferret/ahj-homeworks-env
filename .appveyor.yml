@@ -8,10 +8,6 @@ branches:
 
 cache: node_modules  # кеширование
 
-environment:
-  my_variable:
-    secure: ykl9qLdykX7n3a/ojs0hkSDD+5sQLwm6teLibXfdc0sLuGZn8miOcAHUrb92k0t4
-
 install:
   - npm install  # команда установки зависимостей
 
@@ -25,7 +21,7 @@ test_script:
 
 deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
-  - git config --global user.name Lazy-ferret
-  - git config --global user.email a.veselov83@gmail.com
-  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
